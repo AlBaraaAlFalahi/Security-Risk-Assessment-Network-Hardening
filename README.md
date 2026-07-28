@@ -1,28 +1,34 @@
-# Security Risk Assessment Report
+ # Security Risk Assessment Report: Network Hardening Strategy
 
-## Part 1: Select up to three hardening tools and methods to implement
-
-Three hardening tools the organization can use to address the vulnerabilities found include:
-
-* Implementing multi-factor authentication (MFA)
-* Setting and enforcing strong password policies
-* Performing firewall maintenance regularly
-
-MFA requires users to use more than one way to identify and verify their credentials before accessing an application. Some MFA methods include fingerprint scans, ID cards, pin numbers, and passwords.
-
-Password policies can be refined to include rules regarding password length, a list of acceptable characters, and a disclaimer to discourage password sharing. They can also include rules surrounding unsuccessful login attempts, such as the user losing access to the network after five unsuccessful attempts.
-
-Firewall maintenance entails checking and updating security configurations regularly to stay ahead of potential threats.
+## Executive Summary
+This report presents a structured risk assessment and network hardening strategy designed to mitigate identity-based threats, unauthorized access, and network layer vulnerabilities. Based on recent operational evaluations, three primary security controls were selected and integrated into the defense framework.
 
 ---
 
-## Part 2: Explain your recommendation(s)
+## 1. Selected Security Hardening Controls
 
-### 1. Multi-Factor Authentication (MFA)
-Enforcing multi-factor authentication (MFA) adds an additional layer of security beyond a password. It will reduce the likelihood that a malicious actor can access a network through a brute force or related attack since additional effort is required to authenticate in more than one way. MFA may also reduce the likelihood of people sharing passwords. Since the recipient of the shared password would need to possess additional authentication besides a password, MFA makes it less useful to share passwords, thereby making passwords less likely to be shared.
+To address identified system vulnerabilities, three primary security measures have been implemented:
 
-### 2. Password Policy Enforcement
-Creating and enforcing a password policy within the company will make it increasingly challenging for malicious actors to access the network. Policies such as suspending the account after a certain number of logins can prevent successful brute force attacks. Increasing password complexity, requiring more frequent password updates, and not allowing passwords to be reused also help stall malicious actors from infiltrating the network.
+* **Multi-Factor Authentication (MFA)**
+* **Enforced Password Policies**
+* **Routine Firewall Maintenance & Rule Auditing**
 
-### 3. Regular Firewall Maintenance
-Firewall maintenance should happen regularly. Network administrators should ensure that firewall rules are in place that reflect the most up to date standards for allowed and denied traffic. Traffic from sources that are suspicious should be placed on a denied traffic list. Firewall rules should be updated whenever a security event occurs, especially an event that allows suspicious network traffic into the network. This measure can be used to protect against various DoS and DDoS attacks.
+### Control Specifications
+
+* **Multi-Factor Authentication (MFA):** Enforces multi-step identity verification before granting access to internal assets. Authentication mechanisms require a combination of knowledge (e.g., passwords/PINs) and possession/inherence factors (e.g., OTP codes, ID cards, biometric scans).
+* **Password Policies:** Establishes organizational credential standards, including complexity constraints, string length requirements, prohibition of credential sharing, and account lockout thresholds (e.g., locking access after 5 consecutive failed attempts).
+* **Firewall Maintenance:** Involves systematic auditing, baseline verification, and real-time updates of access control lists (ACLs) to block dynamic network threats.
+
+---
+
+## 2. Technical Justification & Threat Mitigation
+
+### Multi-Factor Authentication (MFA)
+Implementing MFA provides an additional defensive layer beyond basic static passwords. It significantly reduces the probability of successful Brute Force, Credential Stuffing, and Social Engineering attacks by requiring out-of-band verification. Additionally, MFA mitigates unauthorized password sharing, as secondary authentication tokens remain bound to individual physical devices or biometric factors.
+
+### Enforced Password Policies
+Strict password policies impede automated exploitation techniques. Enforcing account lockouts after consecutive failed logins effectively halts brute force scripts. Mandatory complexity requirements and disallowing password reuse increase cryptographic entropy, making dictionary and offline cracking attacks computationally infeasible.
+
+### Routine Firewall Maintenance
+Continuous firewall management ensures perimeter security rules align with current threat intelligence. Filtering suspicious inbound/outbound traffic via updated blocklists and adjusting rule bases immediately following security events prevents unauthorized ingress and mitigates Denial of Service (DoS) and Distributed Denial of Service (DDoS) attack vectors.
+
